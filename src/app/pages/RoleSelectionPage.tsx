@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router';
 import { Card } from '../components/Card';
+import { BackButton } from '../components/BackButton';
 import { motion } from 'motion/react';
 import { 
   Code, 
@@ -138,6 +139,8 @@ export function RoleSelectionPage() {
 
   return (
     <div className="max-w-7xl mx-auto">
+      <BackButton to="/app" className="mb-6" />
+      
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

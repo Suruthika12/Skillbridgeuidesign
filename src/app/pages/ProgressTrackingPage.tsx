@@ -1,5 +1,6 @@
 import { useParams } from 'react-router';
 import { Card } from '../components/Card';
+import { BackButton } from '../components/BackButton';
 import { motion } from 'motion/react';
 import { Calendar, TrendingUp, Clock, Target, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
@@ -28,6 +29,8 @@ export function ProgressTrackingPage() {
 
   return (
     <div className="max-w-6xl mx-auto">
+      <BackButton className="mb-6" />
+      
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

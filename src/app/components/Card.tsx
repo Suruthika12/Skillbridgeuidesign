@@ -13,7 +13,7 @@ export function Card({ children, className = '', hoverable = false, onClick }: C
   
   return (
     <Component
-      className={`bg-white rounded-2xl shadow-sm border border-gray-100 ${className} ${
+      className={`bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 transition-colors duration-200 ${className} ${
         onClick ? 'cursor-pointer' : ''
       }`}
       whileHover={hoverable ? { y: -4, shadow: '0 20px 25px -5px rgb(0 0 0 / 0.1)' } : {}}

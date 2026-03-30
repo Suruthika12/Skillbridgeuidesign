@@ -70,13 +70,13 @@ export function DashboardPage() {
         >
           <Card className="p-6">
             <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center">
-                <Target className="w-6 h-6 text-blue-600" />
+              <div className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                <Target className="w-6 h-6 text-blue-600 dark:text-blue-400" />
               </div>
-              <span className="text-sm text-green-600 font-semibold">+12%</span>
+              <span className="text-sm text-green-600 dark:text-green-400 font-semibold">+12%</span>
             </div>
-            <h3 className="text-2xl font-bold text-gray-900">68%</h3>
-            <p className="text-gray-600 text-sm">Overall Progress</p>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white">68%</h3>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">Overall Progress</p>
           </Card>
         </motion.div>
 
@@ -87,12 +87,12 @@ export function DashboardPage() {
         >
           <Card className="p-6">
             <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center">
-                <BookOpen className="w-6 h-6 text-purple-600" />
+              <div className="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
+                <BookOpen className="w-6 h-6 text-purple-600 dark:text-purple-400" />
               </div>
             </div>
-            <h3 className="text-2xl font-bold text-gray-900">24</h3>
-            <p className="text-gray-600 text-sm">Lessons Completed</p>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white">24</h3>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">Lessons Completed</p>
           </Card>
         </motion.div>
 
@@ -103,12 +103,12 @@ export function DashboardPage() {
         >
           <Card className="p-6">
             <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center">
-                <CheckCircle2 className="w-6 h-6 text-green-600" />
+              <div className="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                <CheckCircle2 className="w-6 h-6 text-green-600 dark:text-green-400" />
               </div>
             </div>
-            <h3 className="text-2xl font-bold text-gray-900">8/12</h3>
-            <p className="text-gray-600 text-sm">Assessments Passed</p>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white">8/12</h3>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">Assessments Passed</p>
           </Card>
         </motion.div>
 
@@ -119,12 +119,12 @@ export function DashboardPage() {
         >
           <Card className="p-6">
             <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center">
-                <Clock className="w-6 h-6 text-orange-600" />
+              <div className="w-12 h-12 rounded-xl bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center">
+                <Clock className="w-6 h-6 text-orange-600 dark:text-orange-400" />
               </div>
             </div>
-            <h3 className="text-2xl font-bold text-gray-900">42h</h3>
-            <p className="text-gray-600 text-sm">Time Invested</p>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white">42h</h3>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">Time Invested</p>
           </Card>
         </motion.div>
       </div>
@@ -147,16 +147,16 @@ export function DashboardPage() {
               </div>
               <ArrowRight className="w-6 h-6 text-gray-400" />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">Job Role-Based Preparation</h3>
-            <p className="text-gray-600 mb-6">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Job Role-Based Preparation</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-6">
               Choose your target role and get a personalized learning roadmap with assessments, 
               resources, and progress tracking.
             </p>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm">Frontend</span>
-              <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm">Backend</span>
-              <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm">Data Science</span>
-              <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm">+8 more</span>
+              <span className="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm">Frontend</span>
+              <span className="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm">Backend</span>
+              <span className="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm">Data Science</span>
+              <span className="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm">+8 more</span>
             </div>
           </Card>
         </motion.div>
@@ -177,16 +177,16 @@ export function DashboardPage() {
               </div>
               <ArrowRight className="w-6 h-6 text-gray-400" />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">Company-Specific Preparation</h3>
-            <p className="text-gray-600 mb-6">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Company-Specific Preparation</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-6">
               Prepare for your dream company with curated resources, mock tests, 
               and interview questions from real candidates.
             </p>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-sm">Google</span>
-              <span className="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-sm">Amazon</span>
-              <span className="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-sm">Microsoft</span>
-              <span className="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-sm">+20 more</span>
+              <span className="px-3 py-1 bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm">Google</span>
+              <span className="px-3 py-1 bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm">Amazon</span>
+              <span className="px-3 py-1 bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm">Microsoft</span>
+              <span className="px-3 py-1 bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm">+20 more</span>
             </div>
           </Card>
         </motion.div>
@@ -203,10 +203,10 @@ export function DashboardPage() {
           <Card className="p-6">
             <div className="flex items-center justify-between mb-6">
               <div>
-                <h3 className="text-xl font-bold text-gray-900">Your Progress</h3>
-                <p className="text-gray-600 text-sm">Weekly performance overview</p>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white">Your Progress</h3>
+                <p className="text-gray-600 dark:text-gray-400 text-sm">Weekly performance overview</p>
               </div>
-              <div className="flex items-center gap-2 text-green-600">
+              <div className="flex items-center gap-2 text-green-600 dark:text-green-400">
                 <TrendingUp className="w-5 h-5" />
                 <span className="font-semibold">+15% this week</span>
               </div>
@@ -247,24 +247,24 @@ export function DashboardPage() {
           transition={{ duration: 0.5, delay: 0.8 }}
         >
           <Card className="p-6">
-            <h3 className="text-xl font-bold text-gray-900 mb-6">Recent Activity</h3>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">Recent Activity</h3>
             <div className="space-y-4">
               {recentActivities.map((activity) => (
                 <div key={activity.id} className="flex items-start gap-3">
                   <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
-                    activity.type === 'lesson' ? 'bg-blue-100' : 'bg-green-100'
+                    activity.type === 'lesson' ? 'bg-blue-100 dark:bg-blue-900/30' : 'bg-green-100 dark:bg-green-900/30'
                   }`}>
                     {activity.type === 'lesson' ? (
-                      <BookOpen className={`w-5 h-5 ${activity.type === 'lesson' ? 'text-blue-600' : 'text-green-600'}`} />
+                      <BookOpen className={`w-5 h-5 ${activity.type === 'lesson' ? 'text-blue-600 dark:text-blue-400' : 'text-green-600 dark:text-green-400'}`} />
                     ) : (
-                      <CheckCircle2 className="w-5 h-5 text-green-600" />
+                      <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400" />
                     )}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="font-medium text-gray-900 text-sm truncate">{activity.title}</p>
-                    <p className="text-gray-500 text-xs">{activity.time}</p>
+                    <p className="font-medium text-gray-900 dark:text-white text-sm truncate">{activity.title}</p>
+                    <p className="text-gray-500 dark:text-gray-400 text-xs">{activity.time}</p>
                     {activity.score && (
-                      <span className="inline-block mt-1 px-2 py-1 bg-green-50 text-green-700 rounded text-xs font-semibold">
+                      <span className="inline-block mt-1 px-2 py-1 bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded text-xs font-semibold">
                         Score: {activity.score}%
                       </span>
                     )}

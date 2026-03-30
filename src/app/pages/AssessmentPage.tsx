@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import { Card } from '../components/Card';
 import { Button } from '../components/Button';
+import { BackButton } from '../components/BackButton';
 import { motion } from 'motion/react';
 import { Clock, CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -155,6 +156,8 @@ export function AssessmentPage() {
 
   return (
     <div className="max-w-5xl mx-auto">
+      <BackButton to="/app/role-selection" className="mb-6" />
+      
       {/* Header */}
       <Card className="p-6 mb-6">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">

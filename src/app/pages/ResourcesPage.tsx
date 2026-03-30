@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import { Card } from '../components/Card';
 import { Button } from '../components/Button';
+import { BackButton } from '../components/BackButton';
 import { motion } from 'motion/react';
 import { FileText, Code, MessageSquare, ExternalLink, Play, BookOpen, Video, Download } from 'lucide-react';
 
@@ -45,6 +46,8 @@ export function ResourcesPage() {
 
   return (
     <div className="max-w-6xl mx-auto">
+      <BackButton to="/app/company-selection" className="mb-6" />
+      
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}

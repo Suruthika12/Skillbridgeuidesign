@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import { Card } from '../components/Card';
 import { Button } from '../components/Button';
+import { BackButton } from '../components/BackButton';
 import { motion, AnimatePresence } from 'motion/react';
 import { CheckCircle2, Circle, ChevronDown, ChevronUp, Play, FileText, Video, Code } from 'lucide-react';
 
@@ -140,6 +141,8 @@ export function LearningRoadmapPage() {
 
   return (
     <div className="max-w-5xl mx-auto">
+      <BackButton className="mb-6" />
+      
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}

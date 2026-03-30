@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import { Card } from '../components/Card';
 import { Button } from '../components/Button';
+import { BackButton } from '../components/BackButton';
 import { motion } from 'motion/react';
 import { Clock, CheckCircle2, ChevronLeft, ChevronRight, TrendingUp } from 'lucide-react';
 
@@ -115,6 +116,8 @@ export function ReAssessmentPage() {
 
   return (
     <div className="max-w-5xl mx-auto">
+      <BackButton className="mb-6" />
+      
       {/* Info Banner */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}

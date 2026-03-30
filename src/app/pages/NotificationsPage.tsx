@@ -2,11 +2,13 @@ import { Card } from '../components/Card';
 import { Button } from '../components/Button';
 import { motion } from 'motion/react';
 import { Bell, CheckCircle2, Clock, AlertCircle, Trophy, BookOpen } from 'lucide-react';
+import { useState } from 'react';
 
 const notifications = [
   {
     id: 1,
     type: 'success',
+    category: 'achievement',
     icon: Trophy,
     title: 'Congratulations! Week 2 Complete',
     message: 'You\'ve completed all tasks for Week 2. Keep up the great work!',
@@ -16,6 +18,7 @@ const notifications = [
   {
     id: 2,
     type: 'reminder',
+    category: 'task',
     icon: Clock,
     title: 'Assessment Reminder',
     message: 'Your re-assessment for Frontend Developer is due in 3 days.',
@@ -25,6 +28,7 @@ const notifications = [
   {
     id: 3,
     type: 'info',
+    category: 'unread',
     icon: BookOpen,
     title: 'New Resource Available',
     message: 'Check out the new React Performance Optimization guide.',
@@ -34,6 +38,7 @@ const notifications = [
   {
     id: 4,
     type: 'success',
+    category: 'task',
     icon: CheckCircle2,
     title: 'Task Completed',
     message: 'You\'ve completed "Build a Weather App" project.',
@@ -43,6 +48,7 @@ const notifications = [
   {
     id: 5,
     type: 'warning',
+    category: 'task',
     icon: AlertCircle,
     title: 'Behind Schedule',
     message: 'You\'re behind on your learning roadmap. Try to catch up this week.',
@@ -52,6 +58,7 @@ const notifications = [
   {
     id: 6,
     type: 'info',
+    category: 'unread',
     icon: Bell,
     title: 'Google Mock Test',
     message: 'New mock test available for Google interview preparation.',
@@ -61,6 +68,7 @@ const notifications = [
   {
     id: 7,
     type: 'success',
+    category: 'achievement',
     icon: Trophy,
     title: 'Achievement Unlocked',
     message: 'You\'ve earned the "Fast Learner" badge!',
@@ -70,6 +78,7 @@ const notifications = [
   {
     id: 8,
     type: 'info',
+    category: 'unread',
     icon: BookOpen,
     title: 'Weekly Progress Report',
     message: 'Your weekly progress report is ready to view.',
@@ -102,6 +111,15 @@ const typeStyles = {
 };
 
 export function NotificationsPage() {
+  const [activeTab, setActiveTab] = useState<'unread' | 'task' | 'achievements'>('unread');
+
+  const filteredNotifications = notifications.filter(notification => {
+    if (activeTab === 'unread') return notification.unread;
+    if (activeTab === 'task') return notification.category === 'task';
+    if (activeTab === 'achievements') return notification.category === 'achievement';
+    return true;
+  });
+
   return (
     <div className="max-w-4xl mx-auto">
       <motion.div
@@ -111,10 +129,10 @@ export function NotificationsPage() {
         className="mb-8"
       >
         <div className="flex items-center justify-between mb-3">
-          <h1 className="text-4xl font-bold text-gray-900">Notifications</h1>
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white">Notifications</h1>
           <Button variant="ghost">Mark all as read</Button>
         </div>
-        <p className="text-gray-600 text-lg">Stay updated with your learning progress</p>
+        <p className="text-gray-600 dark:text-gray-400 text-lg">Stay updated with your learning progress</p>
       </motion.div>
 
       {/* Filter Tabs */}
@@ -124,75 +142,130 @@ export function NotificationsPage() {
         transition={{ duration: 0.5, delay: 0.1 }}
         className="mb-6"
       >
-        <Card className="p-2">
-          <div className="flex gap-2">
-            <button className="px-4 py-2 rounded-lg bg-blue-100 text-blue-700 font-medium">
-              All
-            </button>
-            <button className="px-4 py-2 rounded-lg text-gray-600 hover:bg-gray-100">
+        <div className="border-b border-gray-200 dark:border-gray-700">
+          <div className="flex gap-8">
+            <button
+              onClick={() => setActiveTab('unread')}
+              className={`px-4 py-3 font-medium transition-colors relative ${
+                activeTab === 'unread'
+                  ? 'text-blue-600 dark:text-blue-400'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
+              }`}
+            >
               Unread
+              {activeTab === 'unread' && (
+                <motion.div
+                  layoutId="activeTab"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 dark:bg-blue-400"
+                  initial={false}
+                  transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+                />
+              )}
             </button>
-            <button className="px-4 py-2 rounded-lg text-gray-600 hover:bg-gray-100">
-              Tasks
+            <button
+              onClick={() => setActiveTab('task')}
+              className={`px-4 py-3 font-medium transition-colors relative ${
+                activeTab === 'task'
+                  ? 'text-blue-600 dark:text-blue-400'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
+              }`}
+            >
+              Task
+              {activeTab === 'task' && (
+                <motion.div
+                  layoutId="activeTab"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 dark:bg-blue-400"
+                  initial={false}
+                  transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+                />
+              )}
             </button>
-            <button className="px-4 py-2 rounded-lg text-gray-600 hover:bg-gray-100">
+            <button
+              onClick={() => setActiveTab('achievements')}
+              className={`px-4 py-3 font-medium transition-colors relative ${
+                activeTab === 'achievements'
+                  ? 'text-blue-600 dark:text-blue-400'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
+              }`}
+            >
               Achievements
+              {activeTab === 'achievements' && (
+                <motion.div
+                  layoutId="activeTab"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 dark:bg-blue-400"
+                  initial={false}
+                  transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+                />
+              )}
             </button>
           </div>
-        </Card>
+        </div>
       </motion.div>
 
       {/* Notifications List */}
       <div className="space-y-3">
-        {notifications.map((notification, index) => {
-          const Icon = notification.icon;
-          const styles = typeStyles[notification.type];
-          
-          return (
-            <motion.div
-              key={notification.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-            >
-              <Card 
-                className={`p-6 ${notification.unread ? 'border-l-4 border-blue-500' : ''}`}
-                hoverable
+        {filteredNotifications.length === 0 ? (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center py-12"
+          >
+            <Bell className="w-16 h-16 text-gray-300 dark:text-gray-600 mx-auto mb-4" />
+            <p className="text-gray-600 dark:text-gray-400">No notifications in this category</p>
+          </motion.div>
+        ) : (
+          filteredNotifications.map((notification, index) => {
+            const Icon = notification.icon;
+            const styles = typeStyles[notification.type];
+            
+            return (
+              <motion.div
+                key={notification.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
               >
-                <div className="flex items-start gap-4">
-                  <div className={`w-12 h-12 rounded-xl ${styles.bg} flex items-center justify-center flex-shrink-0`}>
-                    <Icon className={`w-6 h-6 ${styles.text}`} />
-                  </div>
-                  
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-start justify-between gap-4 mb-2">
-                      <h3 className="font-bold text-gray-900">{notification.title}</h3>
-                      {notification.unread && (
-                        <span className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0 mt-2" />
-                      )}
+                <Card 
+                  className={`p-6 ${notification.unread ? 'border-l-4 border-blue-500 dark:border-blue-400' : ''}`}
+                  hoverable
+                >
+                  <div className="flex items-start gap-4">
+                    <div className={`w-12 h-12 rounded-xl ${styles.bg} dark:opacity-80 flex items-center justify-center flex-shrink-0`}>
+                      <Icon className={`w-6 h-6 ${styles.text}`} />
                     </div>
-                    <p className="text-gray-600 mb-2">{notification.message}</p>
-                    <div className="flex items-center gap-2 text-sm text-gray-500">
-                      <Clock className="w-4 h-4" />
-                      <span>{notification.time}</span>
+                    
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-start justify-between gap-4 mb-2">
+                        <h3 className="font-bold text-gray-900 dark:text-white">{notification.title}</h3>
+                        {notification.unread && (
+                          <span className="w-2 h-2 bg-blue-500 dark:bg-blue-400 rounded-full flex-shrink-0 mt-2" />
+                        )}
+                      </div>
+                      <p className="text-gray-600 dark:text-gray-400 mb-2">{notification.message}</p>
+                      <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-500">
+                        <Clock className="w-4 h-4" />
+                        <span>{notification.time}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Card>
-            </motion.div>
-          );
-        })}
+                </Card>
+              </motion.div>
+            );
+          })
+        )}
       </div>
 
       {/* Load More */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-        className="mt-8 text-center"
-      >
-        <Button variant="outline">Load More Notifications</Button>
-      </motion.div>
+      {filteredNotifications.length > 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="mt-8 text-center"
+        >
+          <Button variant="outline">Load More Notifications</Button>
+        </motion.div>
+      )}
     </div>
   );
 }

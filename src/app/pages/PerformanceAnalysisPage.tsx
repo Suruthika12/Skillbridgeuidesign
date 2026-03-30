@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from 'react-router';
 import { Card } from '../components/Card';
 import { Button } from '../components/Button';
+import { BackButton } from '../components/BackButton';
 import { motion } from 'motion/react';
 import { Trophy, Target, TrendingUp, Award, ArrowRight } from 'lucide-react';
 import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
@@ -38,6 +39,8 @@ export function PerformanceAnalysisPage() {
 
   return (
     <div className="max-w-6xl mx-auto">
+      <BackButton className="mb-6" />
+      
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}

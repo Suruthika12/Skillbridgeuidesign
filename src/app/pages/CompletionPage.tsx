@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import { Card } from '../components/Card';
 import { Button } from '../components/Button';
+import { BackButton } from '../components/BackButton';
 import { motion } from 'motion/react';
 import { Trophy, Star, Download, Share2, TrendingUp, Award } from 'lucide-react';
 import confetti from 'canvas-confetti';
@@ -50,6 +51,8 @@ export function CompletionPage() {
 
   return (
     <div className="max-w-4xl mx-auto">
+      <BackButton to="/app" className="mb-6" />
+      
       {/* Congratulations Section */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}

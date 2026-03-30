@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import { Card } from '../components/Card';
 import { Button } from '../components/Button';
+import { BackButton } from '../components/BackButton';
 import { motion } from 'motion/react';
 import { Clock, CheckCircle2, Code, FileText, Brain } from 'lucide-react';
 
@@ -58,6 +59,8 @@ export function MockTestPage() {
   if (!started) {
     return (
       <div className="max-w-4xl mx-auto">
+        <BackButton className="mb-6" />
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

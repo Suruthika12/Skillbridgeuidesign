@@ -95,7 +95,7 @@ export function LoginPage() {
       </div>
 
       {/* Right side - Login form */}
-      <div className="flex-1 flex items-center justify-center p-8 bg-gray-50">
+      <div className="flex-1 flex items-center justify-center p-8 bg-gray-50 dark:bg-gray-900">
         <motion.div 
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -111,8 +111,8 @@ export function LoginPage() {
                 SkillBridge
               </span>
             </div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">Welcome back!</h2>
-            <p className="text-gray-600">Sign in to continue your learning journey</p>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Welcome back!</h2>
+            <p className="text-gray-600 dark:text-gray-400">Sign in to continue your learning journey</p>
           </div>
 
           <form onSubmit={handleLogin} className="space-y-6">
@@ -136,10 +136,10 @@ export function LoginPage() {
 
             <div className="flex items-center justify-between">
               <label className="flex items-center gap-2">
-                <input type="checkbox" className="w-4 h-4 rounded border-gray-300" />
-                <span className="text-sm text-gray-600">Remember me</span>
+                <input type="checkbox" className="w-4 h-4 rounded border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800" />
+                <span className="text-sm text-gray-600 dark:text-gray-400">Remember me</span>
               </label>
-              <button type="button" className="text-sm text-blue-600 hover:text-blue-700">
+              <button type="button" className="text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
                 Forgot password?
               </button>
             </div>
@@ -152,10 +152,10 @@ export function LoginPage() {
           <div className="mt-6">
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-300" />
+                <div className="w-full border-t border-gray-300 dark:border-gray-600" />
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-4 bg-gray-50 text-gray-500">Or continue with</span>
+                <span className="px-4 bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400">Or continue with</span>
               </div>
             </div>
 
@@ -198,11 +198,11 @@ export function LoginPage() {
             </div>
           </div>
 
-          <p className="mt-8 text-center text-gray-600">
+          <p className="mt-8 text-center text-gray-600 dark:text-gray-400">
             Don't have an account?{' '}
             <button
               onClick={() => navigate('/signup')}
-              className="text-blue-600 hover:text-blue-700 font-semibold"
+              className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold"
             >
               Sign up
             </button>
